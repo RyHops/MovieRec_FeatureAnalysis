@@ -101,10 +101,5 @@ The results section provides a comprehensive analysis of the model performance, 
 
 ## Credits
 + *Ryan Hopkins*
-+ *Collaborators if any*
 
 <div align="right" style="text-align: right;"><a href="#top">Back to Top</a></div>
-
----
-
-Feel free to adjust any details or add additional information as needed.
