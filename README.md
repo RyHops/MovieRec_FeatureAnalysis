@@ -3,99 +3,61 @@
 
 > ## Table of Contents
 > - [Introduction](#introduction)
-> - [Motivation](#motivation)
 > - [Data](#data)
 >   - [Raw Data Sources](#raw-data-sources)
->   - [Data Preparation and Preprocessing](#data-preparation-and-preprocessing)
+>   - [Content](#content)
 >  - [Installation](#installation)
->  - [Analysis / Model Building](#analysis-\-model-building)
->      - [Exploratory Data Analysis](#exploratory-data-analysis)
->      - [Recommendation Model](#recommendation-model)
->           - [Collaborative Filtering](#collaborative-filtering)
->           - [Content-Based Filtering](#content-based-filtering)
-> - [Results and Discussion](#results-and-discussion)
 > - [Credits](#credits)
 
 ## Introduction
-This project aims to build a movie recommendation system using collaborative and content-based filtering techniques. By analyzing features from streaming services, we aim to enhance user experience through personalized movie suggestions.
-
-<div align="right" style="text-align: right;"><a href="#top">Back to Top</a></div>
-
-## Motivation
 In an era of abundant content, users often face difficulty in choosing what to watch. Our goal is to develop a robust recommendation model that simplifies this process, improving user satisfaction and engagement with streaming platforms.
+
+
+This project aims to build a movie/show recommendation system that only considers movies found on subscribed streaming services. By analyzing features from streaming services, we aim to enhance user experience through personalized movie suggestions.
 
 <div align="right" style="text-align: right;"><a href="#top">Back to Top</a></div>
 
 ## Data
 
 ### Raw Data Sources
-We utilize several datasets consisting of movie ratings, user interactions, and movie metadata, primarily sourced from:
-- *[MovieLens](https://grouplens.org/datasets/movielens/)*: A large dataset of movie ratings by users.
-- *[IMDb](https://www.imdb.com/interfaces/)*: Metadata for movies, including genres, actors, and directors.
+I primarily used [Kaggle](https://www.kaggle.com/) to find my streaming datasets. I will hyperlink each dataset for documentation purposes and in the case anyone is interested in delving further into the project:
+- [Amazon Prime Video](https://www.kaggle.com/datasets/victorsoeiro/amazon-prime-tv-shows-and-movies?select=titles.csv)
+- [AppleTV+](https://www.kaggle.com/datasets/dgoenrique/apple-tv-movies-and-tv-shows?select=titles.csv)
+- [Disney+](https://www.kaggle.com/datasets/victorsoeiro/disney-tv-shows-and-movies?select=titles.csv)
+- [HBO Max](https://www.kaggle.com/datasets/dgoenrique/hbo-max-movies-and-tv-shows?select=titles.csv)
+- [Netflix](https://www.kaggle.com/datasets/victorsoeiro/netflix-tv-shows-and-movies?select=titles.csv)
+- [Paramount+](https://www.kaggle.com/datasets/victorsoeiro/paramount-tv-shows-and-movies?select=titles.csv)
 
 <div align="right" style="text-align: right;"><a href="#top">Back to Top</a></div>
 
-## Data Preparation and Preprocessing
+### Content
+In each dataset, there are 15 features:
 
-***(Users do not need to run these scripts, as the cleaned and preprocessed datasets are already available in the repository.)***
+- `id`: The title ID on JustWatch.
+- `title`: The name of the title.
+- `type`: TV show or movie.
+- `description`: A brief description.
+- `release_year`: The release year.
+- `age_certification`: The age certification.
+- `runtime`: The length of the episode (SHOW) or movie.
+- `genres`: A list of genres.
+- `production_countries`: A list of countries that - produced the title.
+- `seasons`: Number of seasons if it's a SHOW.
+- `imdb_id`: The title ID on IMDB.
+- `imdb_score`: Score on IMDB.
+- `imdb_votes`: Votes on IMDB.
+- `tmdb_popularity`: Popularity on TMDB.
+- `tmdb_score`: Score on TMDB.
 
-The `Code/Prep` directory contains scripts used for data cleaning and preprocessing, crucial for preparing the datasets used in our analyses. These scripts are included for transparency and for those interested in understanding or replicating our preprocessing steps.
-
-<div align="right" style="text-align: right;"><a href="#top">Back to Top</a></div>
-
-### Available Data
-
-The preprocessed datasets used for analysis are available in the `Data/` directory. These datasets have been cleaned, merged, and formatted for direct use in the analysis scripts provided in the `Code/Analysis` directory.
-
-> Links to the raw datasets used for data preparation and preprocessing can be found in the `ExternalData.txt` file.
-
-<div align="right" style="text-align: right;"><a href="#top">Back to Top</a></div>
 
 ## Installation
 To set up this project locally, follow these steps:
-1. Clone the repository:
+- Clone the repository:
 ``` console
 git clone https://github.com/RyHops/MovieRec_FeatureAnalysis.git
 ```
-2. Install required libraries:
-``` console
-pip install -r requirements.txt
-```
-
-<div align="right" style="text-align: right;"><a href="#top">Back to Top</a></div>
-
-## Analysis / Model Building
-Run the following scripts, found in the `Code/Analysis` directory, to analyze the preprocessed datasets found in the `Data/` directory:
-
-### Exploratory Data Analysis
-
-- `EDA_Movies.ipynb`
-  - **Description**: This notebook performs exploratory data analysis on the movie dataset. It processes data from CSV files, visualizes user ratings distribution, and explores the correlation between different movie features.
-    - **Input**: `Data/movies.csv`, `Data/ratings.csv`
-    - **Output**: The notebook generates a series of plots visualizing ratings distribution, genre popularity, and the correlation between movie features.
-
-<div align="right" style="text-align: right;"><a href="#top">Back to Top</a></div>
-
-### Recommendation Model
-
-#### Collaborative Filtering
-
-- `Collaborative_Filtering.ipynb`
-  - **Description**: This notebook implements collaborative filtering using matrix factorization techniques to predict user ratings for movies.
-    - **Input**: `Data/ratings.csv`
-    - **Output**: Predicted ratings for each user-movie pair, and evaluation metrics such as RMSE and MAE.
-
-#### Content-Based Filtering
-
-- `Content_Based_Filtering.ipynb`
-  - **Description**: This notebook implements content-based filtering using movie metadata to recommend movies based on their features.
-    - **Input**: `Data/movies.csv`
-    - **Output**: Movie recommendations for each user based on their preferences and movie features.
-
-<div align="right" style="text-align: right;"><a href="#top">Back to Top</a></div>
-
-## Results and Discussion
-The results section provides a comprehensive analysis of the model performance, including evaluation metrics and visualizations of the recommendation effectiveness. We discuss the strengths and limitations of each approach and suggest potential improvements.
+- I wrote this using a local path for the datafiles. In order to run tyhe script, download `Data\Raw` and replace each respective path.
+- Read and run each cell chronologically.
 
 <div align="right" style="text-align: right;"><a href="#top">Back to Top</a></div>
 
