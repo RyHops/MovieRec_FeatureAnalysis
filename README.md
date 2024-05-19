@@ -56,7 +56,7 @@ To set up this project locally, follow these steps:
 ``` console
 git clone https://github.com/RyHops/MovieRec_FeatureAnalysis.git
 ```
-- I wrote this using a local path for the datafiles. In order to run tyhe script, download `Data\Raw` and replace each respective path.
+- I wrote this using a local path for the datafiles. Download `Data\Raw` and replace each respective path.
 - Read and run each cell chronologically.
 
 <div align="right" style="text-align: right;"><a href="#top">Back to Top</a></div>
